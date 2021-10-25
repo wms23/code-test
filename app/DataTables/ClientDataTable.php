@@ -18,7 +18,12 @@ class ClientDataTable extends DataTable
     {
         $dataTable = new EloquentDataTable($query);
 
-        return $dataTable->addColumn('action', 'clients.datatables_actions');
+        return $dataTable
+            ->addColumn('photo', function ($data){
+                return '<img src='.'/storage/'.$data->photo.' width="40" height="40" />';
+            })
+            ->addColumn('action', 'clients.datatables_actions')
+            ->rawColumns(['photo','action']);
     }
 
     /**
