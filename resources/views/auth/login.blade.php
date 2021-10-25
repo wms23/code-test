@@ -48,15 +48,16 @@
                 @csrf
 
                 <div class="input-group mb-3">
-                    <input type="email"
-                           name="email"
-                           value="{{ old('email') }}"
-                           placeholder="Email"
-                           class="form-control @error('email') is-invalid @enderror">
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-envelope"></span></div>
-                    </div>
-                    @error('email')
+                    <input type="text"
+                           name="username"
+                           value="{{ old('username') }}"
+                           placeholder="username"
+                           class="form-control @error('username') is-invalid @enderror">
+
+                    {{--<div class="input-group-append">--}}
+                        {{--<div class="input-group-text"><span class="fas fa-envelope"></span></div>--}}
+                    {{--</div>--}}
+                    @error('username')
                     <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
@@ -95,9 +96,9 @@
             <p class="mb-1">
                 <a href="{{ route('password.request') }}">I forgot my password</a>
             </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
-            </p>
+            {{--<p class="mb-0">--}}
+                {{--<a href="{{ route('register') }}" class="text-center">Register a new membership</a>--}}
+            {{--</p>--}}
         </div>
         <!-- /.login-card-body -->
     </div>

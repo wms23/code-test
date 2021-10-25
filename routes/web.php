@@ -19,8 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [
     HomeController::class, 'index'
 ])->name('home');
+
+
+Auth::routes(['register' => false]);
+
+
+
+Route::resource('clients', App\Http\Controllers\ClientController::class);
+
+Route::resource('billings', App\Http\Controllers\BillingController::class);
